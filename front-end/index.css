@@ -1,0 +1,21 @@
+body {
+    background-color: #000000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.class2 {
+    color: #969696; 
+    text-align: center;
+}
+
+
+h1, h2 {
+    color: #969696; 
+    text-align: center;
+}
+
+table.centre {
+    margin-left: auto;
+    margin-right: auto;
+}
+

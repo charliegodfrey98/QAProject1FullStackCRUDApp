@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <header>
+        <h1>Call of Duty loadout</h1>
+    </header>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <section>
+                    <table class="table class2 center">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Primary Weapon</th>
+                                <th>Secondary Weapon</th>
+                                <th>Lethal</th>
+                                <th>Tactical</th>
+                                <th>Perk 1</th>
+                                <th>Perk 2</th>
+                                <th>Perk 3</th>
+                                <th>update/delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body"></tbody>
+                    </table>
+                </section>
+            </div>
+            <div class="col">
+                <section style="text-align: center;">
+                    <h2>test</h2>
+                    <div>
+                        <button type="button" class="button2" data-toggle="modal" data-target="createModal"
+                            data-whatever="@getbootstrap" onclick="myModal.show()">create</button>
+                        <div class="modal fade" id="createModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Create your loadout</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form id="createLoadoutForm">
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">Loadout name:</label>
+                                                <input type="text" class="form-control" id="createloadoutname"
+                                                    name="name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">Primary
+                                                    Weapon:</label>
+                                                <select class="custom-select mr-sm-2" id="createloadoutprimaryweapon"
+                                                    name="primaryWeapon">
+                                                    <option disabled>Assult rifle</option>
+                                                    <option value="Kilo 141">Kilo 141</option>
+                                                    <option>Fal</option>
+                                                    <option>FR 5.56</option>
+                                                    <option>Oden</option>
+                                                    <option>M13</option>
+                                                    <option>FN Scar 17</option>
+                                                    <option>AK-47</option>
+                                                    <option>RAM-7</option>
+                                                    <option>Grau 5.56</option>
+                                                    <option>CR-56 AMAX</option>
+                                                    <option disabled>SMG</option>
+                                                    <option>AUG</option>
+                                                    <option>P90</option>
+                                                    <option>MP5</option>
+                                                    <option>Uzi</option>
+                                                    <option>PP19 Bizon</option>
+                                                    <option>MP7</option>
+                                                    <option>Striker 45</option>
+                                                    <option>FENNEC</option>
+                                                    <option disabled>Shotgun</option>
+                                                    <option>Model 680</option>
+                                                    <option>R9-0 Shotgun</option>
+                                                    <option>725</option>
+                                                    <option>Origin 12 Shotgun</option>
+                                                    <option>VLK Rogue</option>
+                                                    <option disabled>LMG</option>
+                                                    <option>PKM</option>
+                                                    <option>SA87</option>
+                                                    <option>M92</option>
+                                                    <option>MG34</option>
+                                                    <option>Holger-26</option>
+                                                    <option>Bruen MK9</option>
+                                                    <option disabled>Marksman rifles</option>
+                                                    <option>EBR-14</option>
+                                                    <option>MK2 Carbine</option>
+                                                    <option>Kar98K</option>
+                                                    <option>Crossbow</option>
+                                                    <option>SKS</option>
+                                                    <option disabled>Sniper Rifles</option>
+                                                    <option>Dragunov</option>
+                                                    <option>HDR</option>
+                                                    <option>AX-50</option>
+                                                    <option disabled>Melee</option>
+                                                    <option>Riot Shield</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">Secondary
+                                                    Weapon:</label>
+                                                <select class="custom-select mr-sm-2" id="createloadoutsecondaryweapon"
+                                                    name="secondaryWeapon">
+                                                    <option disabled>Hand Guns</option>
+                                                    <option>X16</option>
+                                                    <option>1911</option>
+                                                    <option>.357</option>
+                                                    <option>M19</option>
+                                                    <option>.50 GS</option>
+                                                    <option>Renetti</option>
+                                                    <option disabled>Launchers</option>
+                                                    <option>PILA</option>
+                                                    <option>Strela-P</option>
+                                                    <option>JOKR</option>
+                                                    <option>RPG-7</option>
+                                                    <option disabled>Melee</option>
+                                                    <option>Combat Knife</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">Lethal:</label>
+                                                <select class="custom-select mr-sm-2" id="createloadoutletahl"
+                                                    name="lethal">
+                                                    <option disabled>Lethal</option>
+                                                    <option>Frag Grenade</option>
+                                                    <option>Semtex</option>
+                                                    <option>Molotov Cocktail</option>
+                                                    <option>Throwing Knife</option>
+                                                    <option>Claymore</option>
+                                                    <option>Proximity Mine</option>
+                                                    <option>C4</option>
+                                                    <option>Thermite</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">Tactical:</label>
+                                                <select class="custom-select mr-sm-2" id="createloadouttactical"
+                                                    name="tactical">
+                                                    <option disabled>Tactical</option>
+                                                    <option>Stun Grenade</option>
+                                                    <option>Smoke Grenade</option>
+                                                    <option>Flash Grenade</option>
+                                                    <option>Stim</option>
+                                                    <option>Decoy Grenade</option>
+                                                    <option>Gas Grenade</option>
+                                                    <option>Snapshot Grenade</option>
+                                                    <option>Heartbeat Sensor</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">Perk
+                                                    1:</label>
+                                                <select class="custom-select mr-sm-2" id="createloadoutperk1"
+                                                    name="perk1">
+                                                    <option disabled>Perk 1</option>
+                                                    <option>Double Time</option>
+                                                    <option>E.O.D.</option>
+                                                    <option>Scavenger</option>
+                                                    <option>Cold-Blooded</option>
+                                                    <option>Kill Chain</option>
+                                                    <option>Quick Fix</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">Perk
+                                                    2:</label>
+                                                <select class="custom-select mr-sm-2" id="createloadoutperk2"
+                                                    name="perk2">
+                                                    <option disabled>Perk 2</option>
+                                                    <option>Restock</option>
+                                                    <option>Hardline</option>
+                                                    <option>Overkill</option>
+                                                    <option>High Alert</option>
+                                                    <option>Ghost</option>
+                                                    <option>Pointman</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="message-text" class="col-form-label">Perk
+                                                    3:</label>
+                                                <select class="custom-select mr-sm-2" id="createloadoutperk3"
+                                                    name="perk3">
+                                                    <option disabled>Perk 3</option>
+                                                    <option>Tune Up</option>
+                                                    <option>Amped</option>
+                                                    <option>Shrapnel</option>
+                                                    <option>Battle Hardened</option>
+                                                    <option>Spotter</option>
+                                                    <option>Tracker</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="submit" class="createButton">Create</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <button class="button2">random</button>
+                    </div>
+                    <button class="button2">classify</button>
+
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">update your loadout</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form id="updateLoadoutForm">
+                                    <input type="text" name="id" id="loadoutid">
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Loadout name:</label>
+                                            <input type="text" class="form-control" id="updateloadoutname" name="name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Primary
+                                                Weapon:</label>
+                                            <select class="custom-select mr-sm-2" id="updateloadoutprimaryweapon"
+                                                name="primaryWeapon">
+                                                <option disabled>Assult rifle</option>
+                                                <option value="Kilo 141">Kilo 141</option>
+                                                <option>Fal</option>
+                                                <option>FR 5.56</option>
+                                                <option>Oden</option>
+                                                <option>M13</option>
+                                                <option>FN Scar 17</option>
+                                                <option>AK-47</option>
+                                                <option>RAM-7</option>
+                                                <option>Grau 5.56</option>
+                                                <option>CR-56 AMAX</option>
+                                                <option disabled>SMG</option>
+                                                <option>AUG</option>
+                                                <option>P90</option>
+                                                <option>MP5</option>
+                                                <option>Uzi</option>
+                                                <option>PP19 Bizon</option>
+                                                <option>MP7</option>
+                                                <option>Striker 45</option>
+                                                <option>FENNEC</option>
+                                                <option disabled>Shotgun</option>
+                                                <option>Model 680</option>
+                                                <option>R9-0 Shotgun</option>
+                                                <option>725</option>
+                                                <option>Origin 12 Shotgun</option>
+                                                <option>VLK Rogue</option>
+                                                <option disabled>LMG</option>
+                                                <option>PKM</option>
+                                                <option>SA87</option>
+                                                <option>M92</option>
+                                                <option>MG34</option>
+                                                <option>Holger-26</option>
+                                                <option>Bruen MK9</option>
+                                                <option disabled>Marksman rifles</option>
+                                                <option>EBR-14</option>
+                                                <option>MK2 Carbine</option>
+                                                <option>Kar98K</option>
+                                                <option>Crossbow</option>
+                                                <option>SKS</option>
+                                                <option disabled>Sniper Rifles</option>
+                                                <option>Dragunov</option>
+                                                <option>HDR</option>
+                                                <option>AX-50</option>
+                                                <option disabled>Melee</option>
+                                                <option>Riot Shield</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Secondary
+                                                Weapon:</label>
+                                            <select class="custom-select mr-sm-2" id="updateloadoutsecondaryweapon"
+                                                name="secondaryWeapon">
+                                                <option disabled>Hand Guns</option>
+                                                <option>X16</option>
+                                                <option>1911</option>
+                                                <option>.357</option>
+                                                <option>M19</option>
+                                                <option>.50 GS</option>
+                                                <option>Renetti</option>
+                                                <option disabled>Launchers</option>
+                                                <option>PILA</option>
+                                                <option>Strela-P</option>
+                                                <option>JOKR</option>
+                                                <option>RPG-7</option>
+                                                <option disabled>Melee</option>
+                                                <option>Combat Knife</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Lethal:</label>
+                                            <select class="custom-select mr-sm-2" id="updateloadoutletahl"
+                                                name="lethal">
+                                                <option disabled>Lethal</option>
+                                                <option>Frag Grenade</option>
+                                                <option>Semtex</option>
+                                                <option>Molotov Cocktail</option>
+                                                <option>Throwing Knife</option>
+                                                <option>Claymore</option>
+                                                <option>Proximity Mine</option>
+                                                <option>C4</option>
+                                                <option>Thermite</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Tactical:</label>
+                                            <select class="custom-select mr-sm-2" id="updateloadouttactical"
+                                                name="tactical">
+                                                <option disabled>Tactical</option>
+                                                <option>Stun Grenade</option>
+                                                <option>Smoke Grenade</option>
+                                                <option>Flash Grenade</option>
+                                                <option>Stim</option>
+                                                <option>Decoy Grenade</option>
+                                                <option>Gas Grenade</option>
+                                                <option>Snapshot Grenade</option>
+                                                <option>Heartbeat Sensor</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Perk
+                                                1:</label>
+                                            <select class="custom-select mr-sm-2" id="updateloadoutperk1" name="perk1">
+                                                <option disabled>Perk 1</option>
+                                                <option>Double Time</option>
+                                                <option>E.O.D.</option>
+                                                <option>Scavenger</option>
+                                                <option>Cold-Blooded</option>
+                                                <option>Kill Chain</option>
+                                                <option>Quick Fix</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Perk
+                                                2:</label>
+                                            <select class="custom-select mr-sm-2" id="updateloadoutperk2" name="perk2">
+                                                <option disabled>Perk 2</option>
+                                                <option>Restock</option>
+                                                <option>Hardline</option>
+                                                <option>Overkill</option>
+                                                <option>High Alert</option>
+                                                <option>Ghost</option>
+                                                <option>Pointman</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">Perk
+                                                3:</label>
+                                            <select class="custom-select mr-sm-2" id="updateloadoutperk3" name="perk3">
+                                                <option disabled>Perk 3</option>
+                                                <option>Tune Up</option>
+                                                <option>Amped</option>
+                                                <option>Shrapnel</option>
+                                                <option>Battle Hardened</option>
+                                                <option>Spotter</option>
+                                                <option>Tracker</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary" id="updateButton">Update</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
